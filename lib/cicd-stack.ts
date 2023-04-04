@@ -39,7 +39,7 @@ export class CicdStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'TestPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('tayyab-java/ci-cd-aws-pipeline-demo', 'main'), //Remember to change 
+        input: CodePipelineSource.gitHub('tayyab-java/ci-cd-aws-pipeline-demo', 'pipelinecdk'), //Remember to change 
         commands: ['npm ci', 
                    'npm run build', 
                    'npx cdk synth']
